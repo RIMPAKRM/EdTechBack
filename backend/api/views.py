@@ -805,6 +805,8 @@ class StudentStatisticsView(APIView):
         )
 
         if student.group:
+            from django.utils import timezone
+            now = timezone.now()
             completed_count = Assignment.objects.filter(
                 group=student.group,
                 status__in=[Assignment.Status.SUBMITTED, Assignment.Status.GRADED]
