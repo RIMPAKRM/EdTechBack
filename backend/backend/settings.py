@@ -143,6 +143,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://*.vercel.app",
+    "https://ed-tech-front-7uvav5f62-maksims-projects-c61c7abb.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
