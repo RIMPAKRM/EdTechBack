@@ -1,3 +1,4 @@
+import os
 from datetime import timedelta
 from pathlib import Path
 
@@ -9,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0p!4%h@r%$=xez&gyzujjb1&*q)m(!*a&rx5!&a-00w9ggvwgr'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-0p!4%h@r%$=xez&gyzujjb1&*q)m(!*a&rx5!&a-00w9ggvwgr')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -141,4 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://*.vercel.app",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
